@@ -108,6 +108,9 @@
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lbEmail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.Text = "Đăng Nhập - ThinkView";
             this.Load += new System.EventHandler(this.frmLogin_Load);

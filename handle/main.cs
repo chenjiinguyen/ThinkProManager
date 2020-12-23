@@ -14,8 +14,10 @@ namespace ThinkProManager.handle
         DataSet data = new DataSet();
         SqlConnection cnn = new SqlConnection("Data Source=localhost;Initial Catalog=THINKPRO;Persist Security Info=True;User ID=sa;Password=Pa$$w0rd");
         Dictionary<string, SqlDataAdapter> da = new Dictionary<string, SqlDataAdapter>();
-        List<string> listTableName = new List<string> { "NGUOIDUNG", "HOADON", "NHACUNGCAP", "SANPHAM", "THONGTIN", "TINHTRANG", "VAITRO", "THUONGHIEU", "CHITIETHD", "LOAI" };
+        List<string> listTableName = new List<string> { "NGUOIDUNG", "HOADON", "NHACUNGCAP", "SANPHAM", "THONGTIN", "TINHTRANG", "VAITRO", "THUONGHIEU", "CHITIETHD", "LOAI","PHIEUNHAP","CHITIETPN","NHANVIEN" };
         public NGUOIDUNG nguoidung;
+        public SANPHAM sanpham;
+        public PHIEUNHAP phieunhap;
         public main()
         {
             foreach(string tableName in listTableName)
@@ -25,6 +27,8 @@ namespace ThinkProManager.handle
             }
 
             nguoidung = new NGUOIDUNG(data);
+            sanpham = new SANPHAM(data);
+            phieunhap = new PHIEUNHAP(data);
         }
 
         public DataTable get(string _TableName)

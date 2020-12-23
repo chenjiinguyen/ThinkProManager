@@ -19,12 +19,10 @@ namespace ThinkProManager.GUI
         public frmLogin()
         {
             InitializeComponent();
+
+            
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -88,6 +86,14 @@ namespace ThinkProManager.GUI
             {
                 btnLogin_Click(this, new EventArgs());
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            //EMAIL = "duyntp2000@gmail.com";
+            //LogonSuccessful = true;
+            ////MessageBox.Show("Đăng nhập thành công");
+            //this.Close();
         }
     }
 }

@@ -25,12 +25,14 @@ namespace ThinkProManager.GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
             user = handle.nguoidung.findEmail(Email);
             string idVaiTro = user["ID_VAITRO"].ToString();
             tsmiName.Text = "[" + handle.nguoidung.roleName(idVaiTro) +"] "+ user["HOTEN"].ToString();
             this.Text = handle.nguoidung.roleName(idVaiTro) + " - Ứng Dụng Quản Lý - ThinkPro";
             tsmiHoaDon.Enabled = handle.nguoidung.checkRole(idVaiTro, "HOADON");
             tsmiNguoiDung.Enabled = handle.nguoidung.checkRole(idVaiTro, "NGUOIDUNG");
+            tsmiNhapHang.Enabled = handle.nguoidung.checkRole(idVaiTro, "PHIEUNHAP");
         }
 
         private void tsmiLogout_Click(object sender, EventArgs e)
@@ -51,6 +53,20 @@ namespace ThinkProManager.GUI
             frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau(Email);
             frmDoiMatKhau.MdiParent = this;
             frmDoiMatKhau.Show();
+        }
+
+        private void tsmiSanPham_Click(object sender, EventArgs e)
+        {
+            frmSanPham frmSanPham = new frmSanPham();
+            frmSanPham.MdiParent = this;
+            frmSanPham.Show();
+        }
+
+        private void tsmiNhapHang_Click(object sender, EventArgs e)
+        {
+            frmPhieuNhap frmPhieuNhap = new frmPhieuNhap(Email);
+            frmPhieuNhap.MdiParent = this;
+            frmPhieuNhap.Show();
         }
     }
 }
