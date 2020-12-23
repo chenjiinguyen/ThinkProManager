@@ -106,12 +106,6 @@
     <Compile Include="GUI\frmPhieuNhap.designer.cs">
       <DependentUpon>frmPhieuNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmQuanLyNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\frmQuanLyNhanVien.designer.cs">
-      <DependentUpon>frmQuanLyNhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="handle\NGUOIDUNG.cs" />
     <Compile Include="handle\main.cs" />
     <Compile Include="handle\PHIEUNHAP.cs" />
@@ -146,9 +140,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmPhieuNhap.resx">
       <DependentUpon>frmPhieuNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmQuanLyNhanVien.resx">
-      <DependentUpon>frmQuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -30,9 +30,9 @@ namespace ThinkProManager.GUI
             string idVaiTro = user["ID_VAITRO"].ToString();
             tsmiName.Text = "[" + handle.nguoidung.roleName(idVaiTro) +"] "+ user["HOTEN"].ToString();
             this.Text = handle.nguoidung.roleName(idVaiTro) + " - Ứng Dụng Quản Lý - ThinkPro";
-            tsmiHoaDon.Enabled = handle.nguoidung.checkRole(idVaiTro, "HOADON");
-            tsmiNguoiDung.Enabled = handle.nguoidung.checkRole(idVaiTro, "NGUOIDUNG");
-            tsmiNhapHang.Enabled = handle.nguoidung.checkRole(idVaiTro, "PHIEUNHAP");
+            tsmiHoaDon.Visible = handle.nguoidung.checkRole(idVaiTro, "HOADON");
+            tsmiNguoiDung.Visible = handle.nguoidung.checkRole(idVaiTro, "NGUOIDUNG");
+            tsmiSanPham.Visible = handle.nguoidung.checkRole(idVaiTro, "SANPHAM");
         }
 
         private void tsmiLogout_Click(object sender, EventArgs e)
@@ -57,16 +57,38 @@ namespace ThinkProManager.GUI
 
         private void tsmiSanPham_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void tsmiNhapHang_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tsmiNguoiDung_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+		private void tsmiQuanLyNhap_Click(object sender, EventArgs e)
+		{
+            frmPhieuNhap frmPhieuNhap = new frmPhieuNhap(Email);
+            frmPhieuNhap.MdiParent = this;
+            frmPhieuNhap.Show();
+        }
+
+		private void tsmiQuanLySanPham_Click(object sender, EventArgs e)
+		{
             frmSanPham frmSanPham = new frmSanPham();
             frmSanPham.MdiParent = this;
             frmSanPham.Show();
         }
 
-        private void tsmiNhapHang_Click(object sender, EventArgs e)
-        {
-            frmPhieuNhap frmPhieuNhap = new frmPhieuNhap(Email);
-            frmPhieuNhap.MdiParent = this;
-            frmPhieuNhap.Show();
+		private void tsmiQuanLyNguoiDung_Click(object sender, EventArgs e)
+		{
+            frmQuanLyNhanVien frmQuanLyNhanVien = new frmQuanLyNhanVien(Email);
+            frmQuanLyNhanVien.MdiParent = this;
+            frmQuanLyNhanVien.Show();
         }
-    }
+	}
 }

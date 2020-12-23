@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ThinkProManager
+namespace ThinkProManager.GUI
 {
     public partial class frmSanPham : Form
     {

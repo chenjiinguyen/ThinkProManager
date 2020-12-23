@@ -26,11 +26,9 @@ namespace ThinkProManager.GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //handle.nguoidung.add("USER001", "duyntp2000@gmail.com", "nguoidung", null, "Nguyễn Duy", "0966740812", "TPHCM", "https://i.imgur.com/8qKkOpe.jpg");
-            //handle.save("NGUOIDUNG");
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
-            if (IsValidEmail(email))
+            if (handle.nguoidung.IsValidEmail(email))
             {
                 int notice = handle.nguoidung.login(email, password);
                 if(notice == -1)
@@ -58,18 +56,7 @@ namespace ThinkProManager.GUI
             }
         }
 
-        bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        
 
         private void txtEmail_KeyDown(object sender, KeyEventArgs e)
         {

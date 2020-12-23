@@ -38,19 +38,20 @@
             this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.ChiTietHD;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1960, 1059);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1307, 689);
             this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.ToolPanelWidth = 133;
             // 
             // frmInPhieuNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1960, 1059);
+            this.ClientSize = new System.Drawing.Size(440, 688);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmInPhieuNhap";
             this.Text = "frmInPhieuNhap";
             this.Load += new System.EventHandler(this.frmInPhieuNhap_Load);

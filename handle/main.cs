@@ -12,7 +12,7 @@ namespace ThinkProManager.handle
     {
 
         DataSet data = new DataSet();
-        SqlConnection cnn = new SqlConnection("Data Source=localhost;Initial Catalog=THINKPRO;Persist Security Info=True;User ID=sa;Password=Pa$$w0rd");
+        SqlConnection cnn = new SqlConnection("Data Source=MAY17\\SQLEXPRESS;Initial Catalog=THINKPRO;Persist Security Info=True;User ID=sa;Password=123");
         Dictionary<string, SqlDataAdapter> da = new Dictionary<string, SqlDataAdapter>();
         List<string> listTableName = new List<string> { "NGUOIDUNG", "HOADON", "NHACUNGCAP", "SANPHAM", "THONGTIN", "TINHTRANG", "VAITRO", "THUONGHIEU", "CHITIETHD", "LOAI","PHIEUNHAP","CHITIETPN","NHANVIEN" };
         public NGUOIDUNG nguoidung;
