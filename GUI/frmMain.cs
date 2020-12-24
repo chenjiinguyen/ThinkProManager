@@ -15,18 +15,18 @@ namespace ThinkProManager.GUI
     {
         main handle = new main();
         DataRow user;
-        string Email;
+        string IDUSER;
         public bool Logout = false;
-        public frmMain(string _Email)
+        public frmMain(string _idUser)
         {
             InitializeComponent();
-            Email = _Email;
+            IDUSER = _idUser;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
-            user = handle.nguoidung.findEmail(Email);
+            user = handle.nguoidung.findID(IDUSER);
             string idVaiTro = user["ID_VAITRO"].ToString();
             tsmiName.Text = "[" + handle.nguoidung.roleName(idVaiTro) +"] "+ user["HOTEN"].ToString();
             this.Text = handle.nguoidung.roleName(idVaiTro) + " - Ứng Dụng Quản Lý - ThinkPro";
@@ -43,14 +43,14 @@ namespace ThinkProManager.GUI
 
         private void tsmiThongTin_Click(object sender, EventArgs e)
         {
-            frmInfo frmInfo = new frmInfo(Email);
+            frmInfo frmInfo = new frmInfo(IDUSER);
             frmInfo.MdiParent = this;
             frmInfo.Show();
         }
 
         private void tsmiDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau(Email);
+            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau(IDUSER);
             frmDoiMatKhau.MdiParent = this;
             frmDoiMatKhau.Show();
         }
@@ -72,23 +72,30 @@ namespace ThinkProManager.GUI
 
 		private void tsmiQuanLyNhap_Click(object sender, EventArgs e)
 		{
-            frmPhieuNhap frmPhieuNhap = new frmPhieuNhap(Email);
+            frmPhieuNhap frmPhieuNhap = new frmPhieuNhap(IDUSER);
             frmPhieuNhap.MdiParent = this;
             frmPhieuNhap.Show();
         }
 
 		private void tsmiQuanLySanPham_Click(object sender, EventArgs e)
 		{
-            frmSanPham frmSanPham = new frmSanPham();
+            frmSanPham frmSanPham = new frmSanPham(IDUSER);
             frmSanPham.MdiParent = this;
             frmSanPham.Show();
         }
 
 		private void tsmiQuanLyNguoiDung_Click(object sender, EventArgs e)
 		{
-            frmQuanLyNhanVien frmQuanLyNhanVien = new frmQuanLyNhanVien(Email);
+            frmQuanLyNhanVien frmQuanLyNhanVien = new frmQuanLyNhanVien(IDUSER);
             frmQuanLyNhanVien.MdiParent = this;
             frmQuanLyNhanVien.Show();
         }
-	}
+
+        private void tsmiNhapHoaDon_Click(object sender, EventArgs e)
+        {
+            frmHoaDon frmHoaDon = new frmHoaDon(IDUSER);
+            frmHoaDon.MdiParent = this;
+            frmHoaDon.Show();
+        }
+    }
 }

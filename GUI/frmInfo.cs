@@ -15,24 +15,24 @@ namespace ThinkProManager.GUI
     {
         main handle = new main();
         DataRow user;
-        string Email;
-        public frmInfo(string _Email)
+        string IDUSER;
+        public frmInfo(string _idUser)
         {
             InitializeComponent();
-            Email = _Email;
+            IDUSER = _idUser;
         }
 
         private void frmInfo_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            user = handle.nguoidung.findEmail(Email);
+            user = handle.nguoidung.findID(IDUSER);
             string idVaiTro = user["ID_VAITRO"].ToString();
             pbAvatar.Load(user["AVATAR"].ToString());
             txtHoTen.Text = user["HOTEN"].ToString();
             txtVaiTro.Text = handle.nguoidung.roleName(idVaiTro);
             txtSDT.Text = user["DIENTHOAI"].ToString();
-            txtEmail.Text = Email;
+            txtEmail.Text = user["EMAIL"].ToString() ;
         }
     }
 }

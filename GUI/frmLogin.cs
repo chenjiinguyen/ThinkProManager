@@ -14,7 +14,7 @@ namespace ThinkProManager.GUI
     public partial class frmLogin : Form
     {
         main handle = new main();
-        public string EMAIL;
+        public string IDUSER;
         public bool LogonSuccessful = false;
         public frmLogin()
         {
@@ -44,7 +44,8 @@ namespace ThinkProManager.GUI
                 }
                 else
                 {
-                    EMAIL = email;
+                    DataRow user = handle.nguoidung.findEmail(email);
+                    IDUSER = user["ID_USER"].ToString().Trim();
                     LogonSuccessful = true;
                     //MessageBox.Show("Đăng nhập thành công");
                     this.Close();
@@ -77,10 +78,10 @@ namespace ThinkProManager.GUI
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            //EMAIL = "duyntp2000@gmail.com";
-            //LogonSuccessful = true;
-            ////MessageBox.Show("Đăng nhập thành công");
-            //this.Close();
+            IDUSER = "USER001";
+            LogonSuccessful = true;
+           
+            this.Close();
         }
     }
 }

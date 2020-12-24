@@ -141,7 +141,6 @@ namespace ThinkProManager.handle
 
         public string GeneratorID()
         {
-            string I = "I";
             DateTime DateTimeNow = DateTime.Now.Date.Add(new TimeSpan(0, 0, 0));
             DataRow[] rowList = _PHIEUNHAP.AsEnumerable().OrderByDescending(x => x.Field<DateTime>("NGAYNHAP")).ToArray();
             int Int_Old_ID = 0;
@@ -150,7 +149,7 @@ namespace ThinkProManager.handle
                 DataRow row = rowList[0];
                 if (row != null)
                 {
-                    string Old_ID = row["ID_PN"].ToString().Split('I')[1];
+                    string Old_ID = row["ID_PN"].ToString().Substring(9, 4);
                     Int_Old_ID = int.Parse(Old_ID);
                 }
             }
@@ -159,7 +158,7 @@ namespace ThinkProManager.handle
             string prefixDate = DateTimeNow.ToString("yyyyMMdd");
             string prefixNumber = (Int_Old_ID + 1).ToString("D" + 4);
             
-            return prefixValue + prefixDate + I + prefixNumber;
+            return prefixValue + prefixDate + prefixNumber;
         }
     }
 }

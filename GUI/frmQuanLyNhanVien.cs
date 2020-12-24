@@ -14,11 +14,11 @@ namespace ThinkProManager.GUI
     {
         handle.main handle = new handle.main();
         DataRow user;
-        string Email;
+        string IDUSER;
         DataRow dataNhanVien = null;
-        public frmQuanLyNhanVien(string _Email)
+        public frmQuanLyNhanVien(string _idUser)
         {
-            Email = _Email;
+            IDUSER = _idUser;
             InitializeComponent();
         }
 
@@ -29,7 +29,7 @@ namespace ThinkProManager.GUI
 
         private void frmQuanLyNhanVien_Load(object sender, EventArgs e)
         {
-            user = handle.nguoidung.findEmail(Email);
+            user = handle.nguoidung.findID(IDUSER);
             dgvNguoiDung.AutoGenerateColumns = false;
             dgvNguoiDung.DataSource = handle.get("NGUOIDUNG");
 
