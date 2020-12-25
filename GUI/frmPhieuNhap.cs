@@ -14,16 +14,16 @@ namespace ThinkProManager.GUI
     {
         handle.main handle = new handle.main();
         DataRow user;
-        string Email;
-        public frmPhieuNhap(string _Email)
+        string IDUSER;
+        public frmPhieuNhap(string _idUser)
         {
             InitializeComponent();
-            Email = _Email;
+            IDUSER = _idUser;
         }
 
         private void frmPhieuNhap_Load(object sender, EventArgs e)
         {
-            user = handle.nguoidung.findEmail(Email);
+            user = handle.nguoidung.findID(IDUSER);
 
             cboMaSP.DataSource = handle.get("SANPHAM");
             cboMaSP.DisplayMember = "TENSP";

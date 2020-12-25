@@ -25,8 +25,8 @@ namespace ThinkProManager
                 Application.Run(frmLogin);
                 if (frmLogin.LogonSuccessful)
                 {
-                    string EMAIL = frmLogin.EMAIL;
-                    frmMain frmMain = new frmMain(EMAIL);
+                    string IDUSER = frmLogin.IDUSER;
+                    frmMain frmMain = new frmMain(IDUSER);
                     Application.Run(frmMain);
                     Logout = frmMain.Logout;
                 }

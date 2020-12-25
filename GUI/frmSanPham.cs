@@ -16,13 +16,18 @@ namespace ThinkProManager.GUI
         
         handle.main handle = new handle.main();
         DataRow dataThongTin = null;
-        public frmSanPham()
+        DataRow user;
+        string IDUSER;
+        public frmSanPham(string _idUser)
         {
             InitializeComponent();
+            IDUSER = _idUser;
         }
 
         private void frmSanPham_Load(object sender, EventArgs e)
         {
+            user = handle.nguoidung.findID(IDUSER);
+
             dgvDSSP.AutoGenerateColumns = false;
             dgvDSSP.DataSource = handle.get("SANPHAM");
 

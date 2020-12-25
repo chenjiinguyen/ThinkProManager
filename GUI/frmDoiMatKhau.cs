@@ -15,18 +15,18 @@ namespace ThinkProManager.GUI
     {
         main handle = new main();
         DataRow user;
-        string Email;
-        public frmDoiMatKhau(string _Email)
+        string IDUSER;
+        public frmDoiMatKhau(string _idUser)
         {
             InitializeComponent();
-            Email = _Email;
+            IDUSER = _idUser;
         }
 
         private void frmDoiMatKhau_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            user = handle.nguoidung.findEmail(Email);
+            user = handle.nguoidung.findID(IDUSER);
             pbAvatar.Load(user["AVATAR"].ToString());
             txtHoTen.Text = user["HOTEN"].ToString();
         }
@@ -38,6 +38,7 @@ namespace ThinkProManager.GUI
             string password_confirm = txtXNMK.Text.Trim();
             if(password_new == password_confirm)
             {
+                string Email = user["EMAIL"].ToString().Trim();
                 int notice = handle.nguoidung.updatePassword(Email, password_old, password_new);
                 if(notice == 0)
                 {
