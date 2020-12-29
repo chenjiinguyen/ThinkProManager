@@ -221,7 +221,7 @@ namespace ThinkProManager.GUI
         private void gridViewHD_Click(object sender, EventArgs e)
         {
             int row_index = (gridViewHD.CurrentRow != null)?gridViewHD.CurrentRow.Index:-1;
-            if(row_index > 0)
+            if(row_index >= 0)
             {
 
                 cboMaSP.SelectedValue = gridViewHD.Rows[row_index].Cells[0].Value.ToString();
@@ -266,31 +266,50 @@ namespace ThinkProManager.GUI
 
         private void frmHoaDon_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (handle.get("HOADON").GetChanges() != null || handle.get("CHITIETHD").GetChanges() != null)
             {
-                handle.save("HOADON");
-                handle.save("CHITIETHD");
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+
+                    handle.save("HOADON");
+                    handle.save("CHITIETHD");
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
             }
-            else if (result == DialogResult.Cancel)
+            else
             {
-                e.Cancel = true;
+                DialogResult result = MessageBox.Show("Bạn có muốn tắt bảng này không ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
+            
         }
 
         private void btnLuuThayDoi_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (handle.get("HOADON").GetChanges() != null || handle.get("CHITIETHD").GetChanges() != null)
             {
-                handle.save("HOADON");
-                handle.save("CHITIETHD");
-            }
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    handle.save("HOADON");
+                    handle.save("CHITIETHD");
+                }
+            }    
+           
         }
 
         private void btnInHoaDon_Click(object sender, EventArgs e)
         {
-
+            frmInHoaDon f2 = new frmInHoaDon();
+            f2.MdiParent = this.ParentForm;
+            f2.Show();
         }
     }
 }

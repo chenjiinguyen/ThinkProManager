@@ -128,6 +128,30 @@ namespace ThinkProManager.handle
             return _CHITIETPN.Rows.Find(new object[] { _idPN, _idSP });
         }
 
+        public DataTable findCTPN(string _idPN)
+        {
+            DataTable result = _CHITIETPN.Clone();
+            DataRow[] Rows = _CHITIETPN.Select("ID_PN = '" + _idPN + "'");
+            foreach (DataRow row in Rows)
+            {
+                result.ImportRow(row);
+            }
+            return result;
+        }
+
+        public DataTable getTableCTPN(string _idPN)
+        {
+            DataTable CTPN = findCTPN(_idPN);
+            DataTable final = main._JoinDataTables(CTPN, data.Tables["SANPHAM"], (row1, row2) => row1.Field<string>("ID_SP") == row2.Field<string>("ID_SP"));
+            DataColumn column = new DataColumn();
+            column.ColumnName = "THANHTIEN";
+            column.DataType = typeof(Int64);
+            final.Columns.Add(column);
+            final.Columns["THANHTIEN"].Expression = "SOLUONGNHAP*DONGIANHAP";
+
+            return final;
+        }
+
         public long ThanhTien(string _idPN)
         {
             long result = 0;
@@ -142,7 +166,7 @@ namespace ThinkProManager.handle
         public string GeneratorID()
         {
             DateTime DateTimeNow = DateTime.Now.Date.Add(new TimeSpan(0, 0, 0));
-            DataRow[] rowList = _PHIEUNHAP.AsEnumerable().OrderByDescending(x => x.Field<DateTime>("NGAYNHAP")).ToArray();
+            DataRow[] rowList = _PHIEUNHAP.AsEnumerable().Where(x => DateTime.Compare(DateTimeNow, x.Field<DateTime>("NGAYLAPHD")) <= 0).OrderByDescending(x => x.Field<DateTime>("NGAYLAPHD")).ToArray();
             int Int_Old_ID = 0;
             if(rowList.Count() > 0)
             {

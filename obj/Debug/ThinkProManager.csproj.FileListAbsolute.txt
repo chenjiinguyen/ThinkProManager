@@ -55,7 +55,6 @@ C:\Users\Administrator\Documents\Projects\ThinkProManager\bin\Debug\CrystalDecis
 C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.csprojAssemblyReference.cache
 C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmDoiMatKhau.resources
 C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmInfo.resources
-C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmInPhieuNhap.resources
 C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmLogin.resources
 C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmMain.resources
 C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmSanPham.resources
@@ -100,3 +99,7 @@ C:\Users\HVP.DESKTOP-93187KR\Documents\GitHub\ThinkProManager\bin\Debug\stdole.d
 C:\Users\HVP.DESKTOP-93187KR\Documents\GitHub\ThinkProManager\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\HVP.DESKTOP-93187KR\Documents\GitHub\ThinkProManager\obj\Debug\ThinkProManager.csproj.CopyComplete
 C:\Users\HVP.DESKTOP-93187KR\Documents\GitHub\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmHoaDon.resources
+C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmHoaDon.resources
+C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmInHoaDon.resources
+C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmInPhieuNhap.resources
+C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmThongKe.resources

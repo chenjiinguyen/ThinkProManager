@@ -138,8 +138,11 @@ namespace ThinkProManager.handle
             DataTable final = main._JoinDataTables(result, data.Tables["THUONGHIEU"], (row1, row2) => row1.Field<string>("ID_BRAND") == row2.Field<string>("ID_BRAND"));
             DataColumn column = new DataColumn();
             column.ColumnName = "THANHTIEN";
+            column.DataType = typeof(Int32);
             final.Columns.Add(column);
+            
             final.Columns["THANHTIEN"].Expression = "SOLUONG*GIATIEN";
+
             return final;
         }
 
@@ -148,7 +151,7 @@ namespace ThinkProManager.handle
         public string GeneratorID()
         {
             DateTime DateTimeNow = DateTime.Now.Date.Add(new TimeSpan(0, 0, 0));
-            DataRow[] rowList = _HOADON.AsEnumerable().OrderByDescending(x => x.Field<DateTime>("NGAYLAPHD")).ToArray();
+            DataRow[] rowList = _HOADON.AsEnumerable().Where(x=> DateTime.Compare(DateTimeNow, x.Field<DateTime>("NGAYLAPHD")) <= 0).OrderByDescending(x => x.Field<DateTime>("NGAYLAPHD")).ToArray();
             int Int_Old_ID = 0;
             if (rowList.Count() > 0)
             {

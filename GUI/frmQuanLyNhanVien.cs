@@ -237,25 +237,39 @@ namespace ThinkProManager.GUI
 
 		private void btnluu_Click(object sender, EventArgs e)
 		{
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (handle.get("NGUOIDUNG").GetChanges() != null || handle.get("NHANVIEN").GetChanges() != null)
             {
-                handle.save("NGUOIDUNG");
-                handle.save("NHANVIEN");
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    handle.save("NGUOIDUNG");
+                    handle.save("NHANVIEN");
+                }
             }
         }
 
 		private void frmQuanLyNhanVien_FormClosing(object sender, FormClosingEventArgs e)
 		{
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (handle.get("NGUOIDUNG").GetChanges() != null || handle.get("NHANVIEN").GetChanges() != null)
             {
-                handle.save("NGUOIDUNG");
-                handle.save("NHANVIEN");
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    handle.save("NGUOIDUNG");
+                    handle.save("NHANVIEN");
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
             }
-            else if (result == DialogResult.Cancel)
+            else
             {
-                e.Cancel = true;
+                DialogResult result = MessageBox.Show("Bạn có muốn tắt bảng này không ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
         }
 

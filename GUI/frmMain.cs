@@ -97,5 +97,12 @@ namespace ThinkProManager.GUI
             frmHoaDon.MdiParent = this;
             frmHoaDon.Show();
         }
+
+        private void tsmiThongKeNhapXuat_Click(object sender, EventArgs e)
+        {
+            frmThongKe frmThongKe = new frmThongKe(IDUSER);
+            frmThongKe.MdiParent = this;
+            frmThongKe.Show();
+        }
     }
 }

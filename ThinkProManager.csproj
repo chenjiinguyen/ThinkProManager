@@ -52,30 +52,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrystalReports\ChiTietHD1.cs">
+    <Compile Include="CrystalReports\ChiTietHD.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ChiTietHD.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReports\THINKPRODataset.cs">
+      <DependentUpon>THINKPRODataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReports\THINKPRODataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>THINKPRODataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReports\ChiTietPN.cs">
+      <DependentUpon>ChiTietPN.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrystalReports\ChiTietHoaDon.cs">
+    <Compile Include="CrystalReports\ThongKeNhap.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ChiTietHoaDon.rpt</DependentUpon>
+      <DependentUpon>ThongKeNhap.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrystalReports\ThongKe.cs">
-      <DependentUpon>ThongKe.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CrystalReports\ThongKe.Designer.cs">
+    <Compile Include="CrystalReports\ThongKeXuat.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ThongKe.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CrystalReports\ThongKePhieuNhap.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThongKePhieuNhap.rpt</DependentUpon>
+      <DependentUpon>ThongKeXuat.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\frmDoiMatKhau.cs">
@@ -95,6 +100,12 @@
     </Compile>
     <Compile Include="GUI\frmInPhieuNhap.Designer.cs">
       <DependentUpon>frmInPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmInHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmInHoaDon.Designer.cs">
+      <DependentUpon>frmInHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmLogin.cs">
       <SubType>Form</SubType>
@@ -132,24 +143,35 @@
     <Compile Include="GUI\frmHoaDon.designer.cs">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmThongKe.designer.cs">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="handle\HOADON.cs" />
     <Compile Include="handle\NGUOIDUNG.cs" />
     <Compile Include="handle\main.cs" />
     <Compile Include="handle\PHIEUNHAP.cs" />
     <Compile Include="handle\SANPHAM.cs" />
+    <Compile Include="handle\THONGKE.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CrystalReports\ChiTietHD.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ChiTietHD1.cs</LastGenOutput>
+      <LastGenOutput>ChiTietHD.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReports\ChiTietHoaDon.rpt">
+    <EmbeddedResource Include="CrystalReports\ChiTietPN.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ChiTietHoaDon.cs</LastGenOutput>
+      <LastGenOutput>ChiTietPN.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReports\ThongKePhieuNhap.rpt">
+    <EmbeddedResource Include="CrystalReports\ThongKeNhap.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ThongKePhieuNhap.cs</LastGenOutput>
+      <LastGenOutput>ThongKeNhap.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\ThongKeXuat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ThongKeXuat.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
@@ -159,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmInPhieuNhap.resx">
       <DependentUpon>frmInPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmInHoaDon.resx">
+      <DependentUpon>frmInHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -178,6 +203,9 @@
     <EmbeddedResource Include="GUI\frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmThongKe.resx">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -188,16 +216,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="CrystalReports\ThongKe.xsc">
-      <DependentUpon>ThongKe.xsd</DependentUpon>
+    <None Include="CrystalReports\THINKPRODataset.xsc">
+      <DependentUpon>THINKPRODataset.xsd</DependentUpon>
     </None>
-    <None Include="CrystalReports\ThongKe.xsd">
+    <None Include="CrystalReports\THINKPRODataset.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ThongKe.Designer.cs</LastGenOutput>
+      <LastGenOutput>THINKPRODataset.Designer.cs</LastGenOutput>
     </None>
-    <None Include="CrystalReports\ThongKe.xss">
-      <DependentUpon>ThongKe.xsd</DependentUpon>
+    <None Include="CrystalReports\THINKPRODataset.xss">
+      <DependentUpon>THINKPRODataset.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

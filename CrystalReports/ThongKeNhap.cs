@@ -16,14 +16,14 @@ namespace ThinkProManager.CrystalReports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ChiTietHoaDon : ReportClass {
+    public class ThongKeNhap : ReportClass {
         
-        public ChiTietHoaDon() {
+        public ThongKeNhap() {
         }
         
         public override string ResourceName {
             get {
-                return "ChiTietHoaDon.rpt";
+                return "ThongKeNhap.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ThinkProManager.CrystalReports {
         
         public override string FullResourceName {
             get {
-                return "ThinkProManager.CrystalReports.ChiTietHoaDon.rpt";
+                return "ThinkProManager.CrystalReports.ThongKeNhap.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,60 @@ namespace ThinkProManager.CrystalReports {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_MaPhieuNhap {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_NhanVienTruc {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_TongTien {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_TenThoiGian {
+            get {
+                return this.DataDefinition.ParameterFields[3];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_NgayKetThuc {
+            get {
+                return this.DataDefinition.ParameterFields[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_NgayBatDau {
+            get {
+                return this.DataDefinition.ParameterFields[5];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedChiTietHoaDon : Component, ICachedReport {
+    public class CachedThongKeNhap : Component, ICachedReport {
         
-        public CachedChiTietHoaDon() {
+        public CachedThongKeNhap() {
         }
         
         [Browsable(false)]
@@ -129,7 +177,7 @@ namespace ThinkProManager.CrystalReports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ChiTietHoaDon rpt = new ChiTietHoaDon();
+            ThongKeNhap rpt = new ThongKeNhap();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -259,11 +259,14 @@ namespace ThinkProManager.GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (handle.get("SANPHAM").GetChanges() != null || handle.get("THONGTIN").GetChanges() != null)
             {
-                handle.save("SANPHAM");
-                handle.save("THONGTIN");
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    handle.save("SANPHAM");
+                    handle.save("THONGTIN");
+                }
             }
             
         }
@@ -360,15 +363,26 @@ namespace ThinkProManager.GUI
 
         private void frmSanPham_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (handle.get("SANPHAM").GetChanges() != null || handle.get("THONGTIN").GetChanges() != null)
             {
-                handle.save("SANPHAM");
-                handle.save("THONGTIN");
+                DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    handle.save("SANPHAM");
+                    handle.save("THONGTIN");
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
             }
-            else if(result == DialogResult.Cancel)
+            else
             {
-                e.Cancel = true;
+                DialogResult result = MessageBox.Show("Bạn có muốn tắt bảng này không ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
         }
     }
