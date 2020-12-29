@@ -78,10 +78,10 @@ namespace ThinkProManager.GUI
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            IDUSER = "USER001";
-            LogonSuccessful = true;
-           
-            this.Close();
+            //IDUSER = "USER001";
+            //LogonSuccessful = true;
+
+            //this.Close();
         }
     }
 }

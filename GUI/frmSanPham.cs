@@ -77,6 +77,7 @@ namespace ThinkProManager.GUI
                 cboLoai.SelectedValue = row["ID_LOAI"].ToString();
                 cboThuongHieu.SelectedValue = row["ID_BRAND"].ToString();
                 cboTinhTrang.SelectedValue = row["ID_TINHTRANG"].ToString();
+                txtSoLuongTonKho.Text = row["SOLUONGTONKHO"].ToString();
                 anhSP.InitialImage = null;
                 anhSP.Image = null;
                 anhSP.Update();

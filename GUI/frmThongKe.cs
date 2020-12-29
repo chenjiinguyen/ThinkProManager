@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,15 +89,17 @@ namespace ThinkProManager.GUI
                 DateTime begin;
                 DateTime end;
                 DataTable result;
+                string format = "dd/MM/yyyy HH:mm:ss";
+                CultureInfo provider = CultureInfo.InvariantCulture;
                 if (radioNam.Checked)
                 {
-                    begin = DateTime.Parse("01/01/" + ThangNam + " 00:00:00");
-                    end = DateTime.Parse("31/12/" + ThangNam + " 23:59:59");
+                    begin = DateTime.ParseExact("01/01/" + ThangNam + " 00:00:00", format, provider);
+                    end = DateTime.ParseExact("31/12/" + ThangNam + " 23:59:59", format, provider);
                 }
                 else
                 {
-                    begin = DateTime.Parse("01/" + ThangNam + " 00:00:00");
-                    end = DateTime.Parse("01/" + ThangNam + " 23:59:59").AddMonths(1).AddDays(-1);
+                    begin = DateTime.ParseExact("01/" + ThangNam + " 00:00:00", format, provider);
+                    end = DateTime.ParseExact("01/" + ThangNam + " 23:59:59", format, provider).AddMonths(1).AddDays(-1);
                 }
 
                 if (radioPhieuNhap.Checked)
@@ -120,6 +123,48 @@ namespace ThinkProManager.GUI
                 
                 
             }
+        }
+
+        private void btnXemIn_Click(object sender, EventArgs e)
+        {
+            if (cboThangNam.Text.Trim() != "")
+            {
+                dgvData.DataSource = null;
+                string ThangNam = cboThangNam.Text.Trim();
+                DateTime begin;
+                DateTime end;
+                DataTable result;
+                string format = "dd/MM/yyyy HH:mm:ss";
+                CultureInfo provider = CultureInfo.InvariantCulture;
+                bool nhapkhau;
+                if (radioNam.Checked)
+                {
+                    begin = DateTime.ParseExact("01/01/" + ThangNam + " 00:00:00", format, provider);
+                    end = DateTime.ParseExact("31/12/" + ThangNam + " 23:59:59", format, provider);
+                }
+                else
+                {
+                    begin = DateTime.ParseExact("01/" + ThangNam + " 00:00:00", format, provider);
+                    end = DateTime.ParseExact("01/" + ThangNam + " 23:59:59", format, provider).AddMonths(1).AddDays(-1);
+                }
+
+                if (radioPhieuNhap.Checked)
+                {
+                    result = handle.thongke.ThongKeNhapKho(begin, end);
+                    nhapkhau = true;
+                }
+                else
+                {
+                    result = handle.thongke.ThongKeXuatKho(begin, end);
+                    nhapkhau = false;
+                }
+                frmInThongKeCR frm = new frmInThongKeCR(nhapkhau,user, result, begin, end);
+                frm.MdiParent = this.ParentForm;
+                frm.Show();
+
+            }
+
+            
         }
     }
 }

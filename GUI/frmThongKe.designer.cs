@@ -38,7 +38,7 @@
             this.grboxCombobox = new System.Windows.Forms.GroupBox();
             this.cboThangNam = new System.Windows.Forms.ComboBox();
             this.btnThongKe = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnXemIn = new System.Windows.Forms.Button();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.grboxPhieu.SuspendLayout();
             this.grboxThangNam.SuspendLayout();
@@ -50,11 +50,9 @@
             // 
             this.grboxPhieu.Controls.Add(this.radioPhieuXuat);
             this.grboxPhieu.Controls.Add(this.radioPhieuNhap);
-            this.grboxPhieu.Location = new System.Drawing.Point(18, 34);
-            this.grboxPhieu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grboxPhieu.Location = new System.Drawing.Point(12, 22);
             this.grboxPhieu.Name = "grboxPhieu";
-            this.grboxPhieu.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grboxPhieu.Size = new System.Drawing.Size(204, 154);
+            this.grboxPhieu.Size = new System.Drawing.Size(136, 100);
             this.grboxPhieu.TabIndex = 0;
             this.grboxPhieu.TabStop = false;
             this.grboxPhieu.Text = "Phiếu Nhập/Xuất";
@@ -62,10 +60,9 @@
             // radioPhieuXuat
             // 
             this.radioPhieuXuat.AutoSize = true;
-            this.radioPhieuXuat.Location = new System.Drawing.Point(22, 95);
-            this.radioPhieuXuat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioPhieuXuat.Location = new System.Drawing.Point(15, 62);
             this.radioPhieuXuat.Name = "radioPhieuXuat";
-            this.radioPhieuXuat.Size = new System.Drawing.Size(138, 24);
+            this.radioPhieuXuat.Size = new System.Drawing.Size(96, 17);
             this.radioPhieuXuat.TabIndex = 1;
             this.radioPhieuXuat.Text = "Phiếu xuất kho";
             this.radioPhieuXuat.UseVisualStyleBackColor = true;
@@ -74,10 +71,9 @@
             // 
             this.radioPhieuNhap.AutoSize = true;
             this.radioPhieuNhap.Checked = true;
-            this.radioPhieuNhap.Location = new System.Drawing.Point(22, 45);
-            this.radioPhieuNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioPhieuNhap.Location = new System.Drawing.Point(15, 29);
             this.radioPhieuNhap.Name = "radioPhieuNhap";
-            this.radioPhieuNhap.Size = new System.Drawing.Size(144, 24);
+            this.radioPhieuNhap.Size = new System.Drawing.Size(100, 17);
             this.radioPhieuNhap.TabIndex = 0;
             this.radioPhieuNhap.TabStop = true;
             this.radioPhieuNhap.Text = "Phiếu nhập kho";
@@ -87,11 +83,9 @@
             // 
             this.grboxThangNam.Controls.Add(this.radioNam);
             this.grboxThangNam.Controls.Add(this.radioThang);
-            this.grboxThangNam.Location = new System.Drawing.Point(273, 34);
-            this.grboxThangNam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grboxThangNam.Location = new System.Drawing.Point(182, 22);
             this.grboxThangNam.Name = "grboxThangNam";
-            this.grboxThangNam.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grboxThangNam.Size = new System.Drawing.Size(204, 154);
+            this.grboxThangNam.Size = new System.Drawing.Size(136, 100);
             this.grboxThangNam.TabIndex = 1;
             this.grboxThangNam.TabStop = false;
             this.grboxThangNam.Text = "Thống kê Tháng/Năm";
@@ -100,10 +94,9 @@
             // radioNam
             // 
             this.radioNam.AutoSize = true;
-            this.radioNam.Location = new System.Drawing.Point(44, 95);
-            this.radioNam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioNam.Location = new System.Drawing.Point(29, 62);
             this.radioNam.Name = "radioNam";
-            this.radioNam.Size = new System.Drawing.Size(67, 24);
+            this.radioNam.Size = new System.Drawing.Size(47, 17);
             this.radioNam.TabIndex = 1;
             this.radioNam.Text = "Năm";
             this.radioNam.UseVisualStyleBackColor = true;
@@ -113,10 +106,9 @@
             // 
             this.radioThang.AutoSize = true;
             this.radioThang.Checked = true;
-            this.radioThang.Location = new System.Drawing.Point(44, 45);
-            this.radioThang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioThang.Location = new System.Drawing.Point(29, 29);
             this.radioThang.Name = "radioThang";
-            this.radioThang.Size = new System.Drawing.Size(79, 24);
+            this.radioThang.Size = new System.Drawing.Size(56, 17);
             this.radioThang.TabIndex = 0;
             this.radioThang.TabStop = true;
             this.radioThang.Text = "Tháng";
@@ -126,11 +118,9 @@
             // grboxCombobox
             // 
             this.grboxCombobox.Controls.Add(this.cboThangNam);
-            this.grboxCombobox.Location = new System.Drawing.Point(520, 34);
-            this.grboxCombobox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grboxCombobox.Location = new System.Drawing.Point(347, 22);
             this.grboxCombobox.Name = "grboxCombobox";
-            this.grboxCombobox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grboxCombobox.Size = new System.Drawing.Size(346, 154);
+            this.grboxCombobox.Size = new System.Drawing.Size(231, 100);
             this.grboxCombobox.TabIndex = 2;
             this.grboxCombobox.TabStop = false;
             this.grboxCombobox.Text = "Mốc Thời Gian";
@@ -139,10 +129,9 @@
             // cboThangNam
             // 
             this.cboThangNam.FormattingEnabled = true;
-            this.cboThangNam.Location = new System.Drawing.Point(39, 66);
-            this.cboThangNam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboThangNam.Location = new System.Drawing.Point(26, 43);
             this.cboThangNam.Name = "cboThangNam";
-            this.cboThangNam.Size = new System.Drawing.Size(265, 28);
+            this.cboThangNam.Size = new System.Drawing.Size(178, 21);
             this.cboThangNam.TabIndex = 0;
             this.cboThangNam.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboThangNam_KeyDown);
             // 
@@ -150,26 +139,25 @@
             // 
             this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(908, 60);
-            this.btnThongKe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThongKe.Location = new System.Drawing.Point(605, 39);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(116, 45);
+            this.btnThongKe.Size = new System.Drawing.Size(77, 29);
             this.btnThongKe.TabIndex = 3;
             this.btnThongKe.Text = "    Thống kê";
             this.btnThongKe.UseVisualStyleBackColor = true;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
-            // button1
+            // btnXemIn
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(908, 120);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 45);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "  Xem in";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnXemIn.Image = ((System.Drawing.Image)(resources.GetObject("btnXemIn.Image")));
+            this.btnXemIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemIn.Location = new System.Drawing.Point(605, 78);
+            this.btnXemIn.Name = "btnXemIn";
+            this.btnXemIn.Size = new System.Drawing.Size(77, 29);
+            this.btnXemIn.TabIndex = 4;
+            this.btnXemIn.Text = "  Xem in";
+            this.btnXemIn.UseVisualStyleBackColor = true;
+            this.btnXemIn.Click += new System.EventHandler(this.btnXemIn_Click);
             // 
             // dgvData
             // 
@@ -177,26 +165,26 @@
             this.dgvData.AllowUserToDeleteRows = false;
             this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(18, 226);
-            this.dgvData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvData.Location = new System.Drawing.Point(12, 147);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersWidth = 62;
-            this.dgvData.Size = new System.Drawing.Size(1006, 515);
+            this.dgvData.Size = new System.Drawing.Size(671, 335);
             this.dgvData.TabIndex = 5;
             // 
             // frmThongKe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1058, 766);
+            this.ClientSize = new System.Drawing.Size(705, 498);
             this.Controls.Add(this.dgvData);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnXemIn);
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.grboxCombobox);
             this.Controls.Add(this.grboxThangNam);
             this.Controls.Add(this.grboxPhieu);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmThongKe";
             this.Text = "THỐNG KÊ";
             this.Load += new System.EventHandler(this.ThongKe_Load);
@@ -221,7 +209,7 @@
         private System.Windows.Forms.RadioButton radioThang;
         private System.Windows.Forms.ComboBox cboThangNam;
         private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnXemIn;
         private System.Windows.Forms.DataGridView dgvData;
     }
 }

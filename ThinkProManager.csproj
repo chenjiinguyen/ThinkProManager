@@ -71,16 +71,16 @@
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReports\ThongKeXuat.cs">
+      <DependentUpon>ThongKeXuat.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="CrystalReports\ThongKeNhap.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ThongKeNhap.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReports\ThongKeXuat.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThongKeXuat.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\frmDoiMatKhau.cs">
@@ -149,6 +149,12 @@
     <Compile Include="GUI\frmThongKe.designer.cs">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmInThongKeCR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmInThongKeCR.Designer.cs">
+      <DependentUpon>frmInThongKeCR.cs</DependentUpon>
+    </Compile>
     <Compile Include="handle\HOADON.cs" />
     <Compile Include="handle\NGUOIDUNG.cs" />
     <Compile Include="handle\main.cs" />
@@ -165,13 +171,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ChiTietPN.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReports\ThongKeNhap.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ThongKeNhap.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReports\ThongKeXuat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ThongKeXuat.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\ThongKeNhap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ThongKeNhap.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmInThongKeCR.resx">
+      <DependentUpon>frmInThongKeCR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
