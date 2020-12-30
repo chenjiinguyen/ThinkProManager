@@ -265,8 +265,16 @@ namespace ThinkProManager.GUI
                 DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    handle.save("SANPHAM");
-                    handle.save("THONGTIN");
+                    bool r1 = handle.save("SANPHAM");
+                    bool r2 = handle.save("THONGTIN");
+                    if (r1 && r2)
+                    {
+                        MessageBox.Show("Lưu thành công vào CSDL");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lưu thất bại. Kiểm tra dữ liệu trước khi lưu");
+                    }
                 }
             }
             
@@ -369,8 +377,18 @@ namespace ThinkProManager.GUI
                 DialogResult result = MessageBox.Show("Bạn có muốn lưu tất cả các thay đổi này ?", "Thông Báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    handle.save("SANPHAM");
-                    handle.save("THONGTIN");
+                    
+                    
+                    bool r1 = handle.save("SANPHAM");
+                    bool r2 = handle.save("THONGTIN");
+                    if (r1 && r2)
+                    {
+                        MessageBox.Show("Lưu thành công vào CSDL");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lưu thất bại. Kiểm tra dữ liệu trước khi lưu");
+                    }
                 }
                 else if (result == DialogResult.Cancel)
                 {

@@ -166,7 +166,7 @@ namespace ThinkProManager.handle
         public string GeneratorID()
         {
             DateTime DateTimeNow = DateTime.Now.Date.Add(new TimeSpan(0, 0, 0));
-            DataRow[] rowList = _PHIEUNHAP.AsEnumerable().Where(x => DateTime.Compare(DateTimeNow, x.Field<DateTime>("NGAYLAPHD")) <= 0).OrderByDescending(x => x.Field<DateTime>("NGAYLAPHD")).ToArray();
+            DataRow[] rowList = _PHIEUNHAP.AsEnumerable().Where(x => DateTime.Compare(DateTimeNow, x.Field<DateTime>("NGAYNHAP")) <= 0).OrderByDescending(x => x.Field<DateTime>("NGAYNHAP")).ToArray();
             int Int_Old_ID = 0;
             if(rowList.Count() > 0)
             {
