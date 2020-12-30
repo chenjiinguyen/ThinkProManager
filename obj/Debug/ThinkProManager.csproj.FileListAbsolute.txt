@@ -112,3 +112,4 @@ C:\Users\Administrator\Documents\GitHub\ThinkProManager\bin\Debug\CrystalDecisio
 C:\Users\Administrator\Documents\GitHub\ThinkProManager\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\Administrator\Documents\GitHub\ThinkProManager\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Administrator\Documents\GitHub\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmInThongKeCR.resources
+C:\Users\Administrator\Documents\Projects\ThinkProManager\obj\Debug\ThinkProManager.GUI.frmInThongKeCR.resources
